@@ -115,7 +115,7 @@ public class JavaFXCalculator extends Application {
 
         // Setup a GridPane for 4x4 Buttons
         int numCols = 4;
-        int numRows = 4;
+        int numRows = 7;
         GridPane paneButton = new GridPane();
         paneButton.setPadding(new Insets(15, 0, 15, 0));  // top, right, bottom, left
         paneButton.setVgap(5);  // Vertical gap between nodes
@@ -130,7 +130,7 @@ public class JavaFXCalculator extends Application {
         }
 
         // Setup 16 Buttons and add to GridPane; and event handler
-        btns = new Button[16];
+        btns = new Button[28];
         for (int i = 0; i < btns.length; ++i) {
             btns[i] = new Button(btnLabels[i]);
             btns[i].setOnAction(handler);  // Register event handler
