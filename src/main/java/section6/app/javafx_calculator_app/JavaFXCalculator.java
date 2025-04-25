@@ -15,8 +15,8 @@ import javafx.geometry.Pos;
 
 public class JavaFXCalculator extends Application {
     private TextField tfDisplay;    // display textfield
-    private Button[] btns;          // 16 buttons
-    private String[] btnLabels = {  // Labels of 16 buttons
+    private Button[] btns;          // 28 buttons
+    private String[] btnLabels = {  // Labels of 28 buttons
             "Off", "Dark", "Light", "+",
             "7", "8", "9", "-",
             "4", "5", "6", "*",
@@ -113,7 +113,7 @@ public class JavaFXCalculator extends Application {
         tfDisplay.setEditable(false);
         tfDisplay.setAlignment(Pos.CENTER_RIGHT);
 
-        // Setup a GridPane for 4x4 Buttons
+        // Setup a GridPane for 4x7 Buttons
         int numCols = 4;
         int numRows = 7;
         GridPane paneButton = new GridPane();
@@ -129,7 +129,7 @@ public class JavaFXCalculator extends Application {
             paneButton.getColumnConstraints().add(columns[i]);
         }
 
-        // Setup 16 Buttons and add to GridPane; and event handler
+        // Setup 28 Buttons and add to GridPane; and event handler
         btns = new Button[28];
         for (int i = 0; i < btns.length; ++i) {
             btns[i] = new Button(btnLabels[i]);
