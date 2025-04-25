@@ -51,7 +51,7 @@ public class JavaFXCalculator extends Application {
                 }
                 break;
 
-            // Operator buttons: '+', '-', 'x', '/' and '='
+            // Operator buttons: '+', '-', '*', '÷' and '='
             case "+":
                 compute();
                 lastOperator = '+';
@@ -60,11 +60,11 @@ public class JavaFXCalculator extends Application {
                 compute();
                 lastOperator = '-';
                 break;
-            case "x":
+            case "*":
                 compute();
                 lastOperator = '*';
                 break;
-            case "/":
+            case "÷":
                 compute();
                 lastOperator = '/';
                 break;
