@@ -26,7 +26,7 @@ public class JavaFXCalculator extends Application {
             "M+", "M-", "MR", "MC"
     };
     // For computation
-    private int result = 0;      // Result of computation
+    private double result = 0;      // Result of computation
     private String inStr = "0";  // Input number as String
     // Previous operator: ' '(nothing), '+', '-', '*', '/', '='
     private char lastOperator = ' ';
@@ -76,6 +76,10 @@ public class JavaFXCalculator extends Application {
                 compute();
                 lastOperator = '^';
                 break;
+            case "√":
+                compute();
+                lastOperator = '√';
+                break;
 
             // Clear button
             case "C":
@@ -91,7 +95,7 @@ public class JavaFXCalculator extends Application {
     // Perform computation on the previous result and the current input number,
     // based on the previous operator.
     private void compute() {
-        int inNum = Integer.parseInt(inStr);
+        double inNum = Integer.parseInt(inStr);
         inStr = "0";
         if (lastOperator == ' ') {
             result = inNum;
@@ -104,7 +108,9 @@ public class JavaFXCalculator extends Application {
         } else if (lastOperator == '/') {
             result /= inNum;
         } else if (lastOperator == '^') {
-            result = (int) Math.pow(result, inNum);
+            result = Math.pow(result, inNum);
+        } else if (lastOperator == '√') {
+            result = Math.sqrt(result);
         } else if (lastOperator == '=') {
             // Keep the result for the next operation
         }
