@@ -28,10 +28,10 @@ public class JavaFXCalculator extends Application {
     // For computation
     private double result = 0;      // Result of computation
     private String inStr = "0";  // Input number as String
-    // Previous operator: ' '(nothing), '+', '-', '*', '/', '='
+    // Previous operator: ' '(nothing), '+', '-', '*', '/', '^', '√', '='
     private char lastOperator = ' ';
 
-    // Event handler for all the 16 Buttons
+    // Event handler for all the 28 Buttons
     EventHandler handler = evt -> {
         String currentBtnLabel = ((Button)evt.getSource()).getText();
         switch (currentBtnLabel) {
@@ -51,7 +51,7 @@ public class JavaFXCalculator extends Application {
                 }
                 break;
 
-            // Operator buttons: '+', '-', '*', '÷' and '='
+            // Operator buttons: '+', '-', '*', '÷', '^', '√' and '='
             case "+":
                 compute();
                 lastOperator = '+';
@@ -88,10 +88,17 @@ public class JavaFXCalculator extends Application {
                 lastOperator = ' ';
                 tfDisplay.setText("0");
                 break;
+
+            // Clear Entry button
+            case "CE":
+                inStr = "0";
+                tfDisplay.setText("0");
+                break;
+
         }
     };
 
-    // User pushes '+', '-', '*', '/' or '=' button.
+    // User pushes '+', '-', '*', '÷', '^', '√', or '=' button.
     // Perform computation on the previous result and the current input number,
     // based on the previous operator.
     private void compute() {
