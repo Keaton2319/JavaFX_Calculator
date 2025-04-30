@@ -15,6 +15,7 @@ import javafx.geometry.Pos;
 
 public class JavaFXCalculator extends Application {
     private TextField tfDisplay;    // display textfield
+    private TextField memoryDisplay;
     private Button[] btns;          // 28 buttons
     private String[] btnLabels = {  // Labels of 28 buttons
             "Off", "Dark", "Light", "+",
@@ -30,6 +31,7 @@ public class JavaFXCalculator extends Application {
     private String inStr = "0";  // Input number as String
     // Previous operator: ' '(nothing), '+', '-', '*', '/', '^', '√', '='
     private char lastOperator = ' ';
+    private double memoryValue = 0;
 
     // Event handler for all the 28 Buttons
     EventHandler handler = evt -> {
@@ -50,6 +52,7 @@ public class JavaFXCalculator extends Application {
                     lastOperator = ' ';
                 }
                 break;
+
 
             // Operator buttons: '+', '-', '*', '÷', '^', '√' and '='
             case "+":
@@ -93,6 +96,27 @@ public class JavaFXCalculator extends Application {
             case "CE":
                 inStr = "0";
                 tfDisplay.setText("0");
+                break;
+
+            // Memory Clear button
+            case "MC":
+                memoryValue = 0;
+                memoryDisplay.setText("0");
+                break;
+
+            // Memory Recall button
+            case "MR":
+                memoryDisplay.setText(Double.toString(memoryValue));
+                break;
+
+            // Memory Plus button
+            case "M+":
+                memoryValue += Double.parseDouble(memoryDisplay.getText());
+                break;
+
+            // Memory Minus button
+            case "M-":
+                memoryValue -= Double.parseDouble(memoryDisplay.getText());
                 break;
 
         }
