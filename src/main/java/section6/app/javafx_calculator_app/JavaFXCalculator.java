@@ -1,6 +1,7 @@
 package section6.app.javafx_calculator_app;
 
 import javafx.application.Application;
+import javafx.application.Platform;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -15,7 +16,7 @@ import javafx.geometry.Pos;
 
 public class JavaFXCalculator extends Application {
     private TextField tfDisplay;    // display textfield
-    private TextField memoryText;
+    private TextField memoryText;   // display memory textfield
     private Button[] btns;          // 28 buttons
     private String[] btnLabels = {  // Labels of 28 buttons
             "Off", "Dark", "Light", "+",
@@ -132,6 +133,13 @@ public class JavaFXCalculator extends Application {
                 }
                 memoryText.setText("Memory = " + memoryValue);
                 break;
+
+            case "←":
+                if (inStr.length() == 1) {
+                    inStr = "0";
+                } else {
+                    tfDisplay.setText(inStr.substring(0, inStr.length() - 1));
+                }
         }
     };
 
@@ -164,6 +172,7 @@ public class JavaFXCalculator extends Application {
     // Setup the UI
     @Override
     public void start(Stage primaryStage) {
+        BorderPane root = new BorderPane();
         // Setup the Display TextField
         tfDisplay = new TextField("0");
         tfDisplay.setEditable(false);
@@ -190,12 +199,38 @@ public class JavaFXCalculator extends Application {
         for (int i = 0; i < btns.length; ++i) {
             btns[i] = new Button(btnLabels[i]);
             btns[i].setOnAction(handler);  // Register event handler
-            btns[i].setMaxSize(Double.MAX_VALUE, Double.MAX_VALUE);  // full-width
+            btns[i].setMaxSize(Double.MAX_VALUE, Double.MAX_VALUE); // full-width
+
+            // Off button
+            switch(btnLabels[i]) {
+                case "Off":
+                    btns[i].setStyle("-fx-color: #8a2b2b");
+                    btns[i].setOnAction(actionEvent -> {
+                        Platform.exit();
+                    });
+                    break;
+
+                case "Dark":
+                    btns[i].setStyle("-fx-text-fill: white; -fx-background-color: black;");
+                    btns[i].setOnAction(actionEvent -> {
+                        root.setStyle("-fx-text-fill: white;");
+                        memoryText.setStyle("-fx-fill: black;");
+                    });
+                    break;
+
+                case "Light":
+                    btns[i].setStyle("-fx-text-fill: white; -fx-background-color: black;");
+                    btns[i].setOnAction(actionEvent -> {
+                        root.setStyle("-fx-text-fill: white;");
+                        memoryText.setStyle("-fx-fill: black;");
+                    });
+                    break;
+
+            }
             paneButton.add(btns[i], i % numCols, i / numCols);  // control, col, row
         }
 
         // Setup up the scene graph rooted at a BorderPane (of 5 zones)
-        BorderPane root = new BorderPane();
         root.setPadding(new Insets(15, 15, 15, 15));  // top, right, bottom, left
         root.setTop(tfDisplay);     // Top zone contains the TextField
         root.setCenter(paneButton); // Center zone contains the GridPane of Buttons
