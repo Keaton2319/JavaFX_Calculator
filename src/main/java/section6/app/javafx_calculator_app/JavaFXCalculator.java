@@ -15,7 +15,7 @@ import javafx.geometry.Pos;
 
 public class JavaFXCalculator extends Application {
     private TextField tfDisplay;    // display textfield
-    private TextField memoryDisplay;
+    private TextField memoryText;
     private Button[] btns;          // 28 buttons
     private String[] btnLabels = {  // Labels of 28 buttons
             "Off", "Dark", "Light", "+",
@@ -40,6 +40,7 @@ public class JavaFXCalculator extends Application {
             // Number buttons
             case "0": case "1": case "2": case "3": case "4":
             case "5": case "6": case "7": case "8": case "9":
+            case ".":
                 if (inStr.equals("0")) {
                     inStr = currentBtnLabel;  // no leading zero
                 } else {
@@ -100,25 +101,37 @@ public class JavaFXCalculator extends Application {
 
             // Memory Clear button
             case "MC":
-                memoryValue = 0;
-                memoryDisplay.setText("0");
+                memoryValue = 0.0;
+                memoryText.setText("Memory = " + memoryValue);
                 break;
 
             // Memory Recall button
             case "MR":
-                memoryDisplay.setText(Double.toString(memoryValue));
+                inStr = String.valueOf(memoryValue);
+                tfDisplay.setText(memoryValue + "");
                 break;
 
             // Memory Plus button
             case "M+":
-                memoryValue += Double.parseDouble(memoryDisplay.getText());
+                if (lastOperator != '=') {
+                    memoryValue += Double.parseDouble(inStr);
+                }
+                else {
+                    memoryValue += result;
+                }
+                memoryText.setText("Memory = " + memoryValue);
                 break;
 
             // Memory Minus button
             case "M-":
-                memoryValue -= Double.parseDouble(memoryDisplay.getText());
+                if (lastOperator != '=') {
+                    memoryValue -= Double.parseDouble(inStr);
+                }
+                else {
+                    memoryValue -= result;
+                }
+                memoryText.setText("Memory = " + memoryValue);
                 break;
-
         }
     };
 
