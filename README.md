@@ -12,17 +12,17 @@
 </div>
 
 ## Table of Contents
-- [🛠️Features](#features)
-- [Code Structure](#code-structure)
-- [Technologies Used](#technologies-used)
-- [License](#license)
-- [Future Enhancements](#future-enhancements)
-- [Example Output](#example-output)
-- [Getting Started](#getting-started)
-     - [Prerequisites](#prerequisites)
-     - [Running the Application](#running-the-application)
-     - [User Instruction](#user-instructions)
-- [Authors](#authors)
+- [🛠️ Features](#features)
+- [🧱 Code Structure](#code-structure)
+- [🤖 Technologies Used](#technologies-used)
+- [🪪 License](#license)
+- [🦾 Future Enhancements](#future-enhancements)
+- [📤 Example Output](#example-output)
+- [⏯ Getting Started](#getting-started)
+     - [📋 Prerequisites](#prerequisites)
+     - [📲 Running the Application](#running-the-application)
+     - [⚠️ User Instruction](#user-instructions)
+- [📝 Authors](#authors)
 
 ## Features
 
@@ -43,7 +43,8 @@
 ## Future Enhancements
 
 
-## Example Output :camera:
+## Example Output 
+:camera:
 
 <div align="center">
   <kbd>
