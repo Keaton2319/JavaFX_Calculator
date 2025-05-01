@@ -152,9 +152,6 @@ public class JavaFXCalculator extends Application {
             case "←":
                 if (inStr.length() > 1) {
                     inStr = inStr.substring(0, inStr.length() - 1);
-                    if (inStr.equals("-")) {
-                        inStr = "0";
-                    }
                 } else {
                     inStr = "0";
                 }
