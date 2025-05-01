@@ -29,7 +29,7 @@ public class JavaFXCalculator extends Application {
     };
     // For computation
     private double result = 0;      // Result of computation
-    private String inStr = "0";  // Input number as String
+    private String inStr = "0";     // Input number as String
     // Previous operator: ' '(nothing), '+', '-', '*', '/', '^', '√', '='
     private char lastOperator = ' ';
     private double memoryValue = 0;
@@ -54,7 +54,6 @@ public class JavaFXCalculator extends Application {
                     lastOperator = ' ';
                 }
                 break;
-
 
             // Operator buttons: '+', '-', '*', '÷', '^', '√' and '='
             case "+":
@@ -134,6 +133,7 @@ public class JavaFXCalculator extends Application {
                 memoryText.setText("Memory = " + memoryValue);
                 break;
 
+            // Backspace button
             case "←":
                 if (inStr.length() == 1) {
                     inStr = "0";
@@ -201,43 +201,50 @@ public class JavaFXCalculator extends Application {
             btns[i].setOnAction(handler);  // set all buttons to use the handler BUT the switch overrides this for some
             btns[i].setMaxSize(Double.MAX_VALUE, Double.MAX_VALUE); // full-width
 
-            // Off button
+            // switch for establishing the color of the buttons
             switch(btnLabels[i]) {
-                case "C": case "CE": case "←": // set color of more than one button at a time
+                // sets color of the Clear, Clear Entry, and Backspace buttons
+                case "C": case "CE": case "←":
                     btns[i].setStyle("-fx-color: #fbe0ad");
                     break;
 
-                case "Off": // Off button
-                    btns[i].setStyle("-fx-color: #8a2b2b"); // sets color of the Off button
-                    btns[i].setOnAction(actionEvent -> Platform.exit()); // exits the program
+                // sets color of the Off button and exits program upon use
+                case "Off":
+                    btns[i].setStyle("-fx-color: #8a2b2b");
+                    btns[i].setOnAction(actionEvent -> Platform.exit());
                     break;
 
-                case "Dark": // Dark button
-                    btns[i].setStyle("-fx-text-fill: black; -fx-background-color: white;"); // sets color of Dark button
+                // sets color of the Dark button and switches the base colors of the calculator
+                case "Dark":
+                    btns[i].setStyle("-fx-text-fill: black; -fx-background-color: white;");
                     btns[i].setOnAction(ActionEvent -> {
                         root.setStyle("-fx-text-fill: white; -fx-background-color: black;");
                         memoryText.setStyle("-fx-fill: white;");
-                    }); // switches the base colors of the calculator
+                    });
                     break;
 
-                case "Light": // Light button
-                    btns[i].setStyle("-fx-text-fill: white; -fx-background-color: black;"); // sets color of Light button
+                // sets color of the Light button and switches the base colors of the calculator
+                case "Light":
+                    btns[i].setStyle("-fx-text-fill: white; -fx-background-color: black;");
                     btns[i].setOnAction(ActionEvent -> {
                         root.setStyle("-fx-text-fill: black; -fx-background-color: white;");
                         memoryText.setStyle("-fx-fill: black;");
-                    }); // switches the base colors of the calculator
+                    });
                     break;
 
-                case "MR": case "MC": case "M+": case "M-": // Memory buttons
-                    btns[i].setStyle("-fx-color: #2099c3"); // sets color of the Memory buttons
+                // set color of the Memory buttons
+                case "MR": case "MC": case "M+": case "M-":
+                    btns[i].setStyle("-fx-color: #2099c3");
                     break;
 
-                case "+": case "-": case "*": case "÷": case "√": case "^": // Operator buttons
-                    btns[i].setStyle("-fx-color: #73ac82"); // sets color of the Operator buttons
+                // sets color of the Operator buttons
+                case "+": case "-": case "*": case "÷": case "√": case "^":
+                    btns[i].setStyle("-fx-color: #73ac82");
                     break;
 
-                case ".": case "=": // Decimal point and Equal buttons
-                    btns[i].setStyle("-fx-color: #d8766b"); // sets color of the Decimal point and Equal buttons
+                // sets color of the Decimal Point and Equal buttons
+                case ".": case "=":
+                    btns[i].setStyle("-fx-color: #d8766b");
                     break;
 
             }
