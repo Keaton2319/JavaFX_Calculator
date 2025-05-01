@@ -41,7 +41,6 @@ public class JavaFXCalculator extends Application {
             // Number buttons
             case "0": case "1": case "2": case "3": case "4":
             case "5": case "6": case "7": case "8": case "9":
-            case ".":
                 if (inStr.equals("0")) {
                     inStr = currentBtnLabel;  // no leading zero
                 } else {
@@ -55,22 +54,37 @@ public class JavaFXCalculator extends Application {
                 }
                 break;
 
+            case ".":
+                if (!inStr.contains(".")) {
+                    inStr += ".";
+                    tfDisplay.setText(inStr);
+                }
+                if (lastOperator == '=') {
+                    result = 0;
+                    lastOperator = ' ';
+                }
+                break;
+
             // Operator buttons: '+', '-', '*', '÷', '^', '√' and '='
             case "+":
                 compute();
                 lastOperator = '+';
+                tfDisplay.setText("+");
                 break;
             case "-":
                 compute();
                 lastOperator = '-';
+                tfDisplay.setText("-");
                 break;
             case "*":
                 compute();
                 lastOperator = '*';
+                tfDisplay.setText("*");
                 break;
             case "÷":
                 compute();
                 lastOperator = '/';
+                tfDisplay.setText("/");
                 break;
             case "=":
                 compute();
@@ -79,6 +93,7 @@ public class JavaFXCalculator extends Application {
             case "^":
                 compute();
                 lastOperator = '^';
+                tfDisplay.setText("^");
                 break;
             case "√":
                 compute();
@@ -147,7 +162,7 @@ public class JavaFXCalculator extends Application {
     // Perform computation on the previous result and the current input number,
     // based on the previous operator.
     private void compute() {
-        double inNum = Integer.parseInt(inStr);
+        double inNum = Double.parseDouble(inStr);
         inStr = "0";
         if (lastOperator == ' ') {
             result = inNum;
@@ -216,19 +231,19 @@ public class JavaFXCalculator extends Application {
 
                 // sets color of the Dark button and switches the base colors of the calculator
                 case "Dark":
-                    btns[i].setStyle("-fx-text-fill: black; -fx-background-color: white;");
+                    btns[i].setStyle("-fx-text-fill: white; -fx-background-color: black;");
                     btns[i].setOnAction(ActionEvent -> {
                         root.setStyle("-fx-text-fill: white; -fx-background-color: black;");
-                        memoryText.setStyle("-fx-fill: white;");
+                        memoryText.setStyle("-fx-fill: black;");
                     });
                     break;
 
                 // sets color of the Light button and switches the base colors of the calculator
                 case "Light":
-                    btns[i].setStyle("-fx-text-fill: white; -fx-background-color: black;");
+                    btns[i].setStyle("-fx-text-fill: black; -fx-background-color: white;");
                     btns[i].setOnAction(ActionEvent -> {
                         root.setStyle("-fx-text-fill: black; -fx-background-color: white;");
-                        memoryText.setStyle("-fx-fill: black;");
+                        memoryText.setStyle("-fx-fill: white;");
                     });
                     break;
 
