@@ -70,14 +70,40 @@ JavaFX Calculator is a desktop program built with JavaFX. It functions as a stan
      - + [JavaFX Calculator Repository](https://github.com/Keaton2319/JavaFX_Calculator.git) +
 2. **Locate JavaFXCalculator.java**
 3. **Run the current application**
-     - Locate the arrow button in the top right and click it to begin the program
+     - Locate the green arrow in the IDE and press it
 
 ### User Instructions
+- Numbers:
+    - Click number buttons (0-9, .)
+
+- Operation:
+    - Click an operator (+, -, *, ÷, ^, √)
+
+- Result:
+    - Press '=' to calculate the result
+
+- Clear or Reset: 
+    - C: Clear all data
+    - CE: Clear entry data
+    - ←: Remove the last digit submitted
+
+- Memory:
+    - M+: Add current entry in memory
+    - M-: Subtract current entry from memory
+    - MR: Recall data from memory
+    - MC: Clear all data from memory
+
+- Themes:
+    - Dark mode
+    - Light mode
+
+- Close App:
+    - Click Off to exit the program
+
 
 ## Authors
 - Keaton Snodgrass
      - Author of JavaFXCalculator.java
      - https://github.com/Keaton2319
-
 
 :arrow_up:[Return To Top](#javafx-calculator)
