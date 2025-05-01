@@ -203,27 +203,41 @@ public class JavaFXCalculator extends Application {
 
             // Off button
             switch(btnLabels[i]) {
-                case "Off":
+                case "C": case "CE": case "←": // set the color of more than one button at a time
+                    btns[i].setStyle("-fx-color: #fbe0ad");
+                    break;
+
+                case "Off": // sets color of Off button and functions as an exit from the program
                     btns[i].setStyle("-fx-color: #8a2b2b");
-                    btns[i].setOnAction(actionEvent -> {
-                        Platform.exit();
+                    btns[i].setOnAction(actionEvent -> Platform.exit());
+                    break;
+
+                case "Dark": // sets color of Dark button and switches to dark mode
+                    btns[i].setStyle("-fx-text-fill: black; -fx-background-color: white;");
+                    btns[i].setOnAction(ActionEvent -> {
+                        root.setStyle("-fx-text-fill: white; -fx-background-color: black;");
+                        memoryText.setStyle("-fx-fill: white;");
                     });
                     break;
 
-                case "Dark":
+                case "Light": // sets color of the Light button and switches to light mode
                     btns[i].setStyle("-fx-text-fill: white; -fx-background-color: black;");
-                    btns[i].setOnAction(actionEvent -> {
-                        root.setStyle("-fx-text-fill: white;");
+                    btns[i].setOnAction(ActionEvent -> {
+                        root.setStyle("-fx-text-fill: black; -fx-background-color: white;");
                         memoryText.setStyle("-fx-fill: black;");
                     });
                     break;
 
-                case "Light":
-                    btns[i].setStyle("-fx-text-fill: white; -fx-background-color: black;");
-                    btns[i].setOnAction(actionEvent -> {
-                        root.setStyle("-fx-text-fill: white;");
-                        memoryText.setStyle("-fx-fill: black;");
-                    });
+                case "MR": case "MC": case "M+": case "M-":
+                    btns[i].setStyle("-fx-color: #2099c3");
+                    break;
+
+                case "+": case "-": case "*": case "÷": case "√": case "^":
+                    btns[i].setStyle("-fx-color: #73ac82");
+                    break;
+
+                case ".": case "=":
+                    btns[i].setStyle("-fx-color: #d8766b");
                     break;
 
             }
