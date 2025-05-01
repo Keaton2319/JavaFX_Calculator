@@ -150,11 +150,16 @@ public class JavaFXCalculator extends Application {
 
             // Backspace button
             case "←":
-                if (inStr.length() == 1) {
-                    inStr = "0";
+                if (inStr.length() > 1) {
+                    inStr = inStr.substring(0, inStr.length() - 1);
+                    if (inStr.equals("-")) {
+                        inStr = "0";
+                    }
                 } else {
-                    tfDisplay.setText(inStr.substring(0, inStr.length() - 1));
+                    inStr = "0";
                 }
+                tfDisplay.setText(inStr);
+                break;
         }
     };
 
