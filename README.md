@@ -25,12 +25,12 @@ JavaFX Calculator is a desktop program built with JavaFX. It functions as a stan
 - [📝 Authors](#authors)
 
 ## Features
-» Basic Operators: +, -, *, ÷, ^, √
-» Memory Operators: M+, M-, MR, MC
-» Entry Operators: C, CE, ←
-» Decimals: . for more comlicated calculations
-» Theme Management: Light and Dark modes
-» Program Exit: Off button closes the app
+- Basic Operators: +, -, *, ÷, ^, √
+- Memory Operators: M+, M-, MR, MC
+- Entry Operators: C, CE, ←
+- Decimals: . for more comlicated calculations
+- Theme Management: Light and Dark modes
+- Program Exit: Off button closes the app
 
 ## Code Structure
 
