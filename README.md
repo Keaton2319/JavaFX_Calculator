@@ -48,14 +48,6 @@ JavaFX Calculator is a desktop program built with JavaFX. It functions as a stan
 - Add textfield for showing memory
 - Add support for the order of operations
 
-## Example Output 
-
-<div align="center">
-  <kbd>
-    <img >
-  </kbd>
-</div>
-
 ## Getting Started
 
 ### Prerequisites
