@@ -7,7 +7,7 @@ JavaFX Calculator is a desktop program built with JavaFX. It functions as a stan
 
 <div align="center">
   <kbd>
-    <img  />
+    <video src="![JavaFX_Calculator_Demo](https://github.com/user-attachments/assets/52a6caef-4c63-4048-bc2e-aebb8378873e)" />
   </kbd>
 </div>
 
