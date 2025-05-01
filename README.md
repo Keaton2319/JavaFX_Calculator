@@ -17,7 +17,7 @@ JavaFX Calculator is a desktop program built with JavaFX. It functions as a stan
 - [🤖 Technologies Used](#technologies-used)
 - [🪪 License](#license)
 - [🦾 Future Enhancements](#future-enhancements)
-- [📤 Example Output](#example-output)
+- [📷 Example Output](#example-output)
 - [⏯ Getting Started](#getting-started)
      - [📋 Prerequisites](#prerequisites)
      - [📲 Running the Application](#running-the-application)
@@ -38,18 +38,20 @@ JavaFX Calculator is a desktop program built with JavaFX. It functions as a stan
 
 ## Technologies Used
 - **Java 17+**
+- **JavaFX**
 - **Amazon Corretto 11+**
-- **Regular Expressions**
+- **Lambda Expressions for Event Handling**
   
 ## License
 - License: (https://img.shields.io/badge/License-MIT-green)
 - Copyright &copy; 2025 Keaton Snodgrass. All rights reserved.**
 
 ## Future Enhancements
-
+- Add parenthesis
+- Add textfield for showing memory
+- Add support for the order of operations
 
 ## Example Output 
-:camera:
 
 <div align="center">
   <kbd>
@@ -61,6 +63,7 @@ JavaFX Calculator is a desktop program built with JavaFX. It functions as a stan
 
 ### Prerequisites
 - Install Java 17+
+- Ensure JavaFX is supported by your IDE
 
 ### Running the Application
 1. **Clone the Repository**
