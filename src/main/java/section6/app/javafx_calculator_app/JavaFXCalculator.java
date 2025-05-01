@@ -198,46 +198,46 @@ public class JavaFXCalculator extends Application {
         btns = new Button[28];
         for (int i = 0; i < btns.length; ++i) {
             btns[i] = new Button(btnLabels[i]);
-            btns[i].setOnAction(handler);  // Register event handler
+            btns[i].setOnAction(handler);  // set all buttons to use the handler BUT the switch overrides this for some
             btns[i].setMaxSize(Double.MAX_VALUE, Double.MAX_VALUE); // full-width
 
             // Off button
             switch(btnLabels[i]) {
-                case "C": case "CE": case "←": // set the color of more than one button at a time
+                case "C": case "CE": case "←": // set color of more than one button at a time
                     btns[i].setStyle("-fx-color: #fbe0ad");
                     break;
 
-                case "Off": // sets color of Off button and functions as an exit from the program
-                    btns[i].setStyle("-fx-color: #8a2b2b");
-                    btns[i].setOnAction(actionEvent -> Platform.exit());
+                case "Off": // Off button
+                    btns[i].setStyle("-fx-color: #8a2b2b"); // sets color of the Off button
+                    btns[i].setOnAction(actionEvent -> Platform.exit()); // exits the program
                     break;
 
-                case "Dark": // sets color of Dark button and switches to dark mode
-                    btns[i].setStyle("-fx-text-fill: black; -fx-background-color: white;");
+                case "Dark": // Dark button
+                    btns[i].setStyle("-fx-text-fill: black; -fx-background-color: white;"); // sets color of Dark button
                     btns[i].setOnAction(ActionEvent -> {
                         root.setStyle("-fx-text-fill: white; -fx-background-color: black;");
                         memoryText.setStyle("-fx-fill: white;");
-                    });
+                    }); // switches the base colors of the calculator
                     break;
 
-                case "Light": // sets color of the Light button and switches to light mode
-                    btns[i].setStyle("-fx-text-fill: white; -fx-background-color: black;");
+                case "Light": // Light button
+                    btns[i].setStyle("-fx-text-fill: white; -fx-background-color: black;"); // sets color of Light button
                     btns[i].setOnAction(ActionEvent -> {
                         root.setStyle("-fx-text-fill: black; -fx-background-color: white;");
                         memoryText.setStyle("-fx-fill: black;");
-                    });
+                    }); // switches the base colors of the calculator
                     break;
 
-                case "MR": case "MC": case "M+": case "M-":
-                    btns[i].setStyle("-fx-color: #2099c3");
+                case "MR": case "MC": case "M+": case "M-": // Memory buttons
+                    btns[i].setStyle("-fx-color: #2099c3"); // sets color of the Memory buttons
                     break;
 
-                case "+": case "-": case "*": case "÷": case "√": case "^":
-                    btns[i].setStyle("-fx-color: #73ac82");
+                case "+": case "-": case "*": case "÷": case "√": case "^": // Operator buttons
+                    btns[i].setStyle("-fx-color: #73ac82"); // sets color of the Operator buttons
                     break;
 
-                case ".": case "=":
-                    btns[i].setStyle("-fx-color: #d8766b");
+                case ".": case "=": // Decimal point and Equal buttons
+                    btns[i].setStyle("-fx-color: #d8766b"); // sets color of the Decimal point and Equal buttons
                     break;
 
             }
