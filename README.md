@@ -67,7 +67,7 @@ JavaFX Calculator is a desktop program built with JavaFX. It functions as a stan
 
 ### Running the Application
 1. **Clone the Repository**
-     - + Enter repository URL here when complete +
+     - + [JavaFX Calculator Repository](https://github.com/Keaton2319/JavaFX_Calculator.git) +
 2. **Locate JavaFXCalculator.java**
 3. **Run the current application**
      - Locate the arrow button in the top right and click it to begin the program
