@@ -14,6 +14,14 @@ import javafx.stage.Stage;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 
+/**
+ * The JavaFX Calculator. Used as a simple calculator.
+ *
+ * @author kesnod01
+ * @version beta 0.1
+ * @see <a href="https://github.com/Keaton2319/JavaFX_Calculator.git>GitHub Repository </a>
+ */
+
 public class JavaFXCalculator extends Application {
     private TextField tfDisplay;    // display textfield
     private TextField memoryText;   // display memory textfield
