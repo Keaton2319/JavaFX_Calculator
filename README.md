@@ -4,8 +4,10 @@
 JavaFX Calculator is a desktop program built with JavaFX. It functions as a standard calculator with basic arithmetic functions including addition, subtraction, multiplication, division, square root, and exponents. The program supports memory operations to allow for saving your calculations. For more complex numbers, the program calculates decimals and has button for adding a decimal to your calculation. There is a built in light and dark mode that can be switched between at the click of a button. The JavaFX Calculator can also clear all data on the calculator or simply clear the entered value. 
 
 ## Demo Video :video_camera:
-                 
-![JavaFX_Calculator_Demo](https://github.com/user-attachments/assets/469e65b9-cea6-4794-ac9c-24a0d77a6235)
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/469e65b9-cea6-4794-ac9c-24a0d77a6235?raw=true" alt="Sublime's custom image"/>
+</p>
 
 
 ## Table of Contents
