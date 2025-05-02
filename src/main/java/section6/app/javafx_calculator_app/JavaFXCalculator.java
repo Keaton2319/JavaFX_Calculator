@@ -272,6 +272,7 @@ public class JavaFXCalculator extends Application {
         root.setPadding(new Insets(15, 15, 15, 15));  // top, right, bottom, left
         root.setTop(tfDisplay);     // Top zone contains the TextField
         root.setCenter(paneButton); // Center zone contains the GridPane of Buttons
+        root.setStyle("-fx-background-color: white;");
 
         // Set up scene and stage
         primaryStage.setScene(new Scene(root, 300, 300));
