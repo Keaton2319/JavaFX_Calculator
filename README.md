@@ -12,7 +12,6 @@ JavaFX Calculator is a desktop program built with JavaFX. It functions as a stan
 
 ## Table of Contents
 - [🛠️ Features](#features)
-- [🧱 Code Structure](#code-structure)
 - [🤖 Technologies Used](#technologies-used)
 - [🪪 License](#license)
 - [🦾 Future Enhancements](#future-enhancements)
@@ -31,10 +30,6 @@ JavaFX Calculator is a desktop program built with JavaFX. It functions as a stan
 - Theme Management: Light and Dark modes
 - Program Exit: Off button closes the app
 
-## Code Structure
-
-
-
 ## Technologies Used
 - **Java 17+**
 - **JavaFX**
@@ -49,6 +44,16 @@ JavaFX Calculator is a desktop program built with JavaFX. It functions as a stan
 - Add parenthesis
 - Add textfield for showing memory
 - Add support for the order of operations
+
+## Example Output
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/5b9d7a6f-51ea-4d53-b47a-d1580adbf8c6?raw=true" alt="Sublime's custom image"/>
+</p>
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/3e39d6e6-7090-48ff-b549-e99aee4d7120?raw=true" alt="Sublime's custom image"/>
+</p>
+
 
 ## Getting Started
 
